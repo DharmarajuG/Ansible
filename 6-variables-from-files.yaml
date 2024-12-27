@@ -1,7 +1,8 @@
 # PLAY level variables
 - name: variables from level
   hosts: localhost
-  vars: variables.yaml
+  vars_files:
+  - variables.yaml
   tasks:
   - name: checking variables
     ansible.builtin.debug:
