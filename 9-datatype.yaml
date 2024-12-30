@@ -1,0 +1,31 @@
+- name: Checking datatypes
+  hosts: localhost
+  vars:
+    NAME: Dharmaraju
+    skills:
+    - Devops
+    - Terraform
+    - k8s
+    - AWS
+    Experience:
+      Devops: 4
+      Terraform: 2
+      k8s: 3
+      AWS: 4
+    Trainer: true
+  tasks:
+  - name: print key value pair
+    ansible.builtin.debug:
+    msg: "name: {{NAME}}"
+
+  - name: Print list
+    ansible.builtin.debug:
+    msg: "skills: {{skills}}"
+
+  - name: print map
+    ansible.builtin.debug:
+    msg: "Experience: {{Experience}}"
+
+  - name: print bool
+    ansible.builtin.debug:
+    msg: "Trainer: {{Trainer}}"
